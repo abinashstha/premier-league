@@ -6,7 +6,7 @@ import App from './App';
 
 const app = (
     <BrowserRouter>
-    <App />
+        <App />
     </BrowserRouter>
 );
 
