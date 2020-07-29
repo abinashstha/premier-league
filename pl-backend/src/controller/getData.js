@@ -3,11 +3,11 @@ const axios = require('axios');
 const baseUrl = config.baseUrl;
 
 
-module.exports = async function getData() {
+module.exports = async function() {
     try {
         axios.get(baseUrl).then(
             response =>{
-                console.log(response.data);
+                console.log(response.data.);
             }
         );
     } catch (e) {

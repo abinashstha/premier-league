@@ -1,2 +1,0 @@
-/pl-frontend/node_modules
-/pl-backend/node_modules
