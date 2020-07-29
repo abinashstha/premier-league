@@ -1,7 +1,7 @@
 import { GET_LEAGUE_TABLE_LIST } from "./types";
 
 const initialState = {
-  leagueTableList: [],
+  leagueTableList: null,
 };
 
 export function leagueTableReducer(state = initialState, action) {

@@ -1,0 +1,24 @@
+.Table{
+    border:1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Table img{
+    height:30px;
+    width:30px;
+}
+.Table th,td{
+    text-align: start;
+    padding:0 10px;
+    min-width: 20px;
+}
+.ClubName{
+    min-width: 250px;
+}
+body{
+    margin: unset;
+}

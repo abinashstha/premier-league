@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import Select from 'react-select';
-import classes from './standings.module.css';
+import classes from './search.module.css';
 import Input from '../UI/Input/Input';
 import Button from '../UI/Button/Button';
 
-class Standings extends Component {
+class Search extends Component {
     state = {
         year: {
             elementType: 'select',
@@ -17,7 +16,7 @@ class Standings extends Component {
                     { value: '2018-19', displayValue: "2018-19" }
                 ]
             },
-            value: '2014-15'
+            value: 'Season'
         },
         search_club: {
             elementType: "input",
@@ -30,9 +29,8 @@ class Standings extends Component {
     };
     render() {
         return (
-            <div className={classes.Standings}>
+            <div className={classes.Search}>
                 <div className={classes.SelectYears} >
-
                     <Input
                         key="select-year"
                         elementType={this.state.year.elementType}
@@ -59,4 +57,4 @@ class Standings extends Component {
     }
 }
 
-export default Standings;
+export default Search;

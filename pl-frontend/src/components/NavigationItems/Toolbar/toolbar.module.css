@@ -1,14 +1,10 @@
 .Toolbar{
     height: 80px;
     width: 100%;
-    position:fixed;
-    top:0;
-    left:0;
     background-color: #37003C;
     display: flex;
     align-items:center; 
     box-sizing: border-box;
-    /* z-index: 90; */
 }
 .LogoTitleContainer{
     display: flex;
@@ -24,7 +20,7 @@
     font-weight: bold;
     color: white;    
 }
-.Standings{
+.Search{
     flex: 1;
     justify-content: flex-end;
 }

@@ -11,6 +11,7 @@ module.exports = {
         publicPath: ''
     },
     devtool: 'cheap-module-eval-source-map',
+    resolve: { extensions: [".ts", ".tsx", ".js", ".css"] },
     module: {
         rules: [
             {

@@ -1,9 +1,10 @@
 const express = require('express');
+const axios = require('axios');
 const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const routes = require('./routes');
-
+const config = require('../src/config/config');
+const baseUrl = config.baseUrl;
 app.use(cors());
 app.use(
     bodyParser.json({
@@ -12,8 +13,20 @@ app.use(
 );
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use('/', routes);
-
+app.get("/", (req, res) => {
+    const year = req.query.year;
+    console.log(year);
+    const requestUrl = baseUrl + year + '/en.1.json';
+    axios.get(requestUrl)
+        .then(resp => {
+            res.send(resp.data);
+        })
+        .catch(err => {
+            // Handle Error Here
+            console.log(err);
+        });
+}
+);
 module.exports = app;
 
 

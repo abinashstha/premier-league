@@ -26,3 +26,6 @@
     background-color: white;
     outline: none;
 }
+select option:hover{
+    background-color: #37003C !important;
+}

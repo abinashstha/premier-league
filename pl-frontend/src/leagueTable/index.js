@@ -3,7 +3,8 @@ import Logo from "../components/NavigationItems/Logo/logo";
 import { connect } from "react-redux";
 import { GetLeagueTableList } from "../redux/actions/leagueTableAction";
 import Toolbar from "../components/NavigationItems/Toolbar/toolbar";
-import Standings from '../components/Standings/standings';
+import Table from '../components/UI/Table';
+
 class index extends Component {
     async componentDidMount() {
         await this.props.GetLeagueTableList();
@@ -12,8 +13,8 @@ class index extends Component {
     render() {
         return (
             <div className="league-table">
-                <Toolbar />
-                {/* <Standings />  */}
+                <Toolbar {...this.props} />
+                <Table {...this.props}/>
             </div>
         );
     }
