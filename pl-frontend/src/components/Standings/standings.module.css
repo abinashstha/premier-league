@@ -1,0 +1,21 @@
+.Standings{
+    width:100%;
+    height: auto;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.SelectYears{
+    width: 200px;
+    height:50px;
+}
+.SearchClubs{
+    width:200px;
+    height:50px;
+}
+.SearchButton{
+    margin-top: 10px;
+    height: 50px;
+    width:auto;
+}
