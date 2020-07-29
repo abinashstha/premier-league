@@ -3,8 +3,8 @@ import { connect } from "react-redux";
 import { GetLeagueTableList } from "../redux/actions/leagueTableAction";
 
 class index extends Component {
-    componentDidMount() {
-      this.props.GetLeagueTableList();
+    async componentDidMount() {
+      await this.props.GetLeagueTableList();
       console.log(this.props.leagueTableList);
     }
     render() {
