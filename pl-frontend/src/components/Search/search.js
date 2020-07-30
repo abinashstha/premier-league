@@ -9,14 +9,16 @@ class Search extends Component {
             elementType: 'select',
             elementConfig: {
                 options: [
-                    { value: '2014-15', displayValue: "2014-15" },
-                    { value: '2015-16', displayValue: "2015-16" },
-                    { value: '2016-17', displayValue: "2016-17" },
+                    { value: '2019-20', displayValue: "2019-20" },
+                    { value: '2018-19', displayValue: "2018-19" },
                     { value: '2017-18', displayValue: "2017-18" },
-                    { value: '2018-19', displayValue: "2018-19" }
+                    { value: '2016-17', displayValue: "2016-17" },
+                    { value: '2015-16', displayValue: "2015-16" },
+                    { value: '2014-15', displayValue: "2014-15" }
+                    
                 ]
             },
-            value: 'Season'
+            value:"Season"
         },
         search_club: {
             elementType: "input",
@@ -27,6 +29,10 @@ class Search extends Component {
             value: '',
         }
     };
+    yearChangedHandler = (event) => {
+        const { value } = event.target;
+        this.props.yearChangedHandler(value);
+    }
     render() {
         return (
             <div className={classes.Search}>
@@ -36,9 +42,9 @@ class Search extends Component {
                         elementType={this.state.year.elementType}
                         elementConfig={this.state.year.elementConfig}
                         changed={(event) => {
-                            this.yearChangedHandler(event, this.state.year.value)
+                            this.yearChangedHandler(event)
                         }}
-                        value={this.state.year.value} />
+                        value={this.props.year} />
                 </div>
                 <div className={classes.SearchClubs}>
                     <Input

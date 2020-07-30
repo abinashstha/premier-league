@@ -15,9 +15,14 @@ const Input = (props) => {
                 <select
                     className={classes.InputElement}
                     {...props.elementConfig}
-                    value={props.value} onChange={props.changed}>
+                    value={props.value}
+                    onChange={props.changed}>
                     {props.elementConfig.options.map(option => (
-                        <option  key={option.value} value={option.value}>{option.displayValue}</option>
+                        <option
+                            key={option.value}
+                            value={option.value}>
+                            {option.displayValue}
+                        </option>
                     ))}
                 </select>
             );
