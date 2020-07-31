@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { GetLeagueTableList } from "../../redux/actions/leagueTableAction";
+import { GetLeagueTableList, SearchByClubName } from "../../redux/actions/leagueTableAction";
 import Toolbar from "../NavigationItems/Toolbar/toolbar";
 import Table from '../UI/Table';
 
@@ -36,6 +36,7 @@ const mapStateToProps = (state) => ({
 });
 const mapDispatchToProps = {
     GetLeagueTableList,
+    SearchByClubName
 };
 export default connect(mapStateToProps, mapDispatchToProps)(index);
 

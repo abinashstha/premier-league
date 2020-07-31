@@ -4,6 +4,10 @@ import Input from '../UI/Input/Input';
 import Button from '../UI/Button/Button';
 
 class Search extends Component {
+    constructor(props){
+        super(props);
+        this.search=this.search.bind(this);
+    }
     state = {
         year: {
             elementType: 'select',
@@ -15,10 +19,9 @@ class Search extends Component {
                     { value: '2016-17', displayValue: "2016-17" },
                     { value: '2015-16', displayValue: "2015-16" },
                     { value: '2014-15', displayValue: "2014-15" }
-                    
                 ]
             },
-            value:"Season"
+            value: "Season"
         },
         search_club: {
             elementType: "input",
@@ -29,34 +32,46 @@ class Search extends Component {
             value: '',
         }
     };
+    search() {
+        const { search_club } = this.state;
+        this.props.SearchByClubName(search_club.value)
+    }
+    searchInputChangedHandler = (event) => {
+        let { search_club } = this.state;
+        const { value } = event.target;
+        search_club.value = value;
+        this.setState({ search_club });
+    }
     yearChangedHandler = (event) => {
+        let { search_club } = this.state;
+        search_club.value = '';
+        this.setState({ search_club });
         const { value } = event.target;
         this.props.yearChangedHandler(value);
     }
     render() {
         return (
             <div className={classes.Search}>
-                <div className={classes.SelectYears} >
+                <div className={classes.SelectYears}>
                     <Input
-                        key="select-year"
+                        key="selectYear"
                         elementType={this.state.year.elementType}
                         elementConfig={this.state.year.elementConfig}
-                        changed={(event) => {
-                            this.yearChangedHandler(event)
-                        }}
+                        placeholder=""
+                        changed={this.yearChangedHandler}
                         value={this.props.year} />
                 </div>
                 <div className={classes.SearchClubs}>
                     <Input
-                        key="search_club"
+                        key="searchClub"
                         elementType={this.state.search_club.elementType}
                         elementConfig={this.state.search_club.elementConfig}
                         value={this.state.search_club.value}
-                        changed={(event) => this.inputChangedHandler(event, this.state.search_club.value)} />
+                        changed={this.searchInputChangedHandler} />
 
                 </div>
                 <div className={classes.SearchButton}>
-                    <Button btnType="Search">Search</Button>
+                    <Button clicked={this.search}>Search</Button>
                 </div>
             </div >
         );

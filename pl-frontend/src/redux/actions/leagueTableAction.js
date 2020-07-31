@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_LEAGUE_TABLE_LIST, GET_LEAGUE_CLUBS_LIST } from "../reducers/types";
+import { GET_LEAGUE_TABLE_LIST, GET_LEAGUE_CLUBS_LIST ,SEARCH_BY_CLUB_NAME} from "../reducers/types";
 const baseUrl = "http://127.0.0.1:5000/api/";
 
 export const GetLeagueTableList = (year) => async (dispatch) => {
@@ -23,7 +23,6 @@ export const GetLeagueTableList = (year) => async (dispatch) => {
                         })
                     })
                 )
-                debugger
                 dispatch({
                     type: GET_LEAGUE_CLUBS_LIST,
                     leagueTitle: resp.data.name,
@@ -87,7 +86,6 @@ export const GetLeagueTableList = (year) => async (dispatch) => {
                         )
                     })
                 )
-
                 leagueTableList = leagueTableList.sort(
                     function (a, b) {
                         if (a.points != b.points)
@@ -106,3 +104,10 @@ export const GetLeagueTableList = (year) => async (dispatch) => {
             console.log(err.message);
         });
 };
+
+export const SearchByClubName = (text) => (dispatch) => {
+    dispatch({
+        type: SEARCH_BY_CLUB_NAME,
+        payload: text,
+    });
+}

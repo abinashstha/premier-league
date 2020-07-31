@@ -1,8 +1,8 @@
-import { GET_LEAGUE_TABLE_LIST } from "./types";
-import { GET_LEAGUE_CLUBS_LIST } from './types';
+import { GET_LEAGUE_TABLE_LIST, GET_LEAGUE_CLUBS_LIST, SEARCH_BY_CLUB_NAME } from "./types";
 
 const initialState = {
   leagueTitle: "",
+  originalLeagueTableList: null,
   leagueTableList: null,
   leagueClubsList: null
 };
@@ -20,8 +20,17 @@ export function leagueTableReducer(state = initialState, action) {
     case GET_LEAGUE_TABLE_LIST:
       return {
         ...state,
+        originalLeagueTableList: action.payload,
         leagueTableList: action.payload,
       };
+
+    case SEARCH_BY_CLUB_NAME: {
+      return {
+        ...state,
+        leagueTableList: state.originalLeagueTableList && state.originalLeagueTableList
+          .filter(f => f.clubName.toLowerCase().includes(action.payload.toLowerCase())),
+      }
+    }
 
     default:
       return state;

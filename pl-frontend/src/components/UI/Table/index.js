@@ -3,14 +3,10 @@ import classes from './table.module.css';
 import plLogo from '../../../assets/images/logo.png';
 
 const index = (props) => {
-  const { leagueTableList } = props
-  console.log(leagueTableList);
-  var style ={
-    border:'5px solid #ccc'
-  }
+  const { leagueTableList } = props;
   return (
-    <div className={classes.Table}>
-      <table>
+    <div className={classes.Container}>
+      <table className={classes.Table}>
         <thead >
           <tr>
             <th></th>
@@ -29,7 +25,7 @@ const index = (props) => {
         <tbody>
           {leagueTableList && leagueTableList.map((club, index) => {
             return (
-              <tr key={index}>
+              <tr key={index} className={index<4?classes.topTeams:index>16?classes.bottomTeams:""}>
                 <td>{index+1}</td>
                 <td><img src={plLogo} /></td>
                 <td className={classes.ClubName}>{club.clubName}</td>

@@ -1,12 +1,12 @@
+.Container{
+    display: flex;
+    justify-content: center;
+}
 .Table{
     border:1px solid #ccc;
     border-radius: 5px;
     padding: 5px;
     margin: 10px;
-    display: flex;
-    /* width: 750px; */
-    justify-content: center;
-    align-items: center;
 }
 .Table img{
     height:30px;
@@ -22,4 +22,13 @@
 }
 body{
     margin: unset;
+}
+
+.topTeams{
+    background-color: #40bf80;
+    color:#fff
+}
+.bottomTeams{
+    background-color: #ff4d4d;
+    color:#fff
 }
