@@ -4,6 +4,7 @@
     padding: 5px;
     margin: 10px;
     display: flex;
+    /* width: 750px; */
     justify-content: center;
     align-items: center;
 }

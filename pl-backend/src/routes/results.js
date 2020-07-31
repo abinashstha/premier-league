@@ -12,9 +12,7 @@ router.get('/', (req, res) => {
             res.send(resp.data);
         })
         .catch(err => {
-            // Handle Error Here
             console.log(err);
         });
 });
-
 module.exports = router;

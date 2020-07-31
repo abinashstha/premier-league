@@ -5,10 +5,13 @@ const Input = (props) => {
     let inputElement = null;
     switch (props.elementType) {
         case ('input'):
-            inputElement = <input
-                className={classes.InputElement}
-                {...props.elementConfig}
-                value={props.value} onChange={props.changed} />
+            inputElement = (
+                <input
+                    className={classes.InputElement}
+                    {...props.elementConfig}
+                    value={props.value}
+                    onChange={props.changed} />
+            );
             break;
         case ("select"):
             inputElement = (
