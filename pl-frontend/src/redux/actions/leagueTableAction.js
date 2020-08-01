@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_LEAGUE_TABLE_LIST, GET_LEAGUE_CLUBS_LIST ,SEARCH_BY_CLUB_NAME} from "../reducers/types";
+import { GET_LEAGUE_TABLE_LIST, GET_LEAGUE_CLUBS_LIST, SEARCH_BY_CLUB_NAME, SORT_BY_POINTS } from "../reducers/types";
 const baseUrl = "http://127.0.0.1:5000/api/";
 
 export const GetLeagueTableList = (year) => async (dispatch) => {
@@ -110,4 +110,12 @@ export const SearchByClubName = (text) => (dispatch) => {
         type: SEARCH_BY_CLUB_NAME,
         payload: text,
     });
+}
+
+export const SortByPoints = (sortBy) => (dispatch) => {
+    dispatch({
+        type: SORT_BY_POINTS,
+        payload: sortBy,
+    });
+
 }

@@ -4,10 +4,6 @@ import Input from '../UI/Input/Input';
 import Button from '../UI/Button/Button';
 
 class Search extends Component {
-    constructor(props){
-        super(props);
-        this.search=this.search.bind(this);
-    }
     state = {
         year: {
             elementType: 'select',
@@ -32,7 +28,7 @@ class Search extends Component {
             value: '',
         }
     };
-    search() {
+    search = () => {
         const { search_club } = this.state;
         this.props.SearchByClubName(search_club.value)
     }
