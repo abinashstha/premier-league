@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { GetLeagueTableList, SearchByClubName, SortByPoints } from "../../redux/actions/leagueTableAction";
+import { GetLeagueTableList, SearchByClubName, SortByPoints } from "../../redux/services/leagueTable";
 import Toolbar from "../NavigationItems/Toolbar/toolbar";
 import Table from '../UI/Table/table';
 import Spinner from '../Spinner/spinner';

@@ -1,9 +1,6 @@
 const config = require('./config/config');
 const app = require('./app');
 
-const port = config.port;
-const host = config.host;
-
-app.listen(port, () => {
-    console.log(`Server running at http://${host}:${port}/api/results/?year=2019-20`);
+app.listen(config.port, () => {
+    console.log(`Server running at http://${config.host}:${config.port}/api/results/?year=2019-20`);
 });
